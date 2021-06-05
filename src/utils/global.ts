@@ -22,3 +22,5 @@ export const Global_styles = StyleSheet.create({
     elevation: 5,
   }
 });
+
+export const Global_Scroll = styled.ScrollView``;
