@@ -9,6 +9,7 @@ export const Global_Container = styled.SafeAreaView`
 export const Global_Primary = "#C8D7DB";
 export const Global_Secundary = "#484848";
 export const Global_Tertiary = "#777777";
+export const Global_Button = "#DDEAEE";
 
 export const Global_styles = StyleSheet.create({
   shadow:{

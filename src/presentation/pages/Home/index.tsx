@@ -7,7 +7,7 @@ import principal from '../../../assets/icons/principal.png';
 
 import proveta from '../../../assets/icons/proveta.png';
 
-import avaliacao from '../../../assets/icons/avaliacao.png';
+import livro from '../../../assets/icons/livro.png';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 Ionicons.loadFont();
@@ -28,8 +28,10 @@ import {
   Menu_Titulo2,
   Menu_Texto2
 } from './styles';
+import { useNavigation } from '@react-navigation/core';
 
 const Home: React.FC = () => {
+  const { navigate } = useNavigation();
   return (
     <> 
       {
@@ -53,7 +55,10 @@ const Home: React.FC = () => {
               Seu aplicativo de estudos de reações químicas.
             </Label_Bordao>
 
-            <Menu_Container style={Global_styles.shadow}>
+            <Menu_Container 
+              style={Global_styles.shadow}
+              onPress={() => navigate('Estudar')}
+            >
               <Menu_Img1 source={proveta}  resizeMode="contain" />
               <Menu_Titulo1>
                 Estudar reações
@@ -76,9 +81,12 @@ const Home: React.FC = () => {
               />
             </Menu_Container>
 
-            <Menu_Container style={Global_styles.shadow}>
+            <Menu_Container 
+              style={Global_styles.shadow}
+              onPress={() => navigate('Quiz')}
+            >
               <Menu_img2 
-                source={avaliacao}
+                source={livro}
                 resizeMode="stretch"
               />
 

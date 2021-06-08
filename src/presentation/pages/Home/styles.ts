@@ -57,10 +57,10 @@ export const Menu_Img1 = styled.Image`
 `;
 
 export const Menu_img2 = styled.Image`
-  width: 30%;
-  height: 40%;
+  width: 40%;
+  height: 52%;
   left: 75%;
-  top: 58%;
+  top: 65%;
   position: absolute;
 `;
 
@@ -68,7 +68,7 @@ export const Menu_Titulo1 = styled.Text`
   align-self: flex-end;
   color: ${Global_Secundary};
   font-size: ${resp(25)}px;
-  letter-spacing: ${resp(1.5)}px;
+  letter-spacing: ${resp(1)}px;
   margin-right: ${resp(25)}px;
   margin-top: ${resp(30)}px;
 `;
@@ -77,7 +77,7 @@ export const Menu_Titulo2 = styled.Text`
   align-self: flex-start;
   color: ${Global_Secundary};
   font-size: ${resp(25)}px;
-  letter-spacing: ${resp(1.5)}px;
+  letter-spacing: ${resp(1)}px;
   margin-left: ${resp(25)}px;
   margin-top: ${resp(30)}px;
 `;
