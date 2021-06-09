@@ -52,11 +52,14 @@ export const Button_Container = styled.TouchableOpacity`
   border-radius: ${resp(20)}px;
   margin-top: ${resp(15)}px;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Button_Left_Container = styled.View`
   border-radius: ${resp(20)}px;
-  width: 87%;
+  width: 88%;
+  justify-content: center;
   height: ${resp(120)}px;
   background-color: ${Global_Button};
   align-self: flex-start;
@@ -74,16 +77,23 @@ export const Button_Right_Container = styled.View`
 `;
 
 export const Icon_Container = styled.View`
-  width: ${resp(70)}px;
   height: ${resp(120)}px;
-  background-color: pink;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Button_Left_Text = styled.Text`
   color: ${Global_Secundary};
-  font-weight: 400;
+  font-weight: 300;
   font-size: ${resp(18)}px;
-  width: 65%;
+
+  width: 60%;
   margin-left: ${resp(10)}px;
+  text-align: left;
+`;
+
+export const Icon = styled.Image`
+  width: ${resp(70)}px;
+  height: ${resp(65)}px;
 `;
 

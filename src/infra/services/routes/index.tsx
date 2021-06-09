@@ -19,6 +19,10 @@ import Estudar from '../../../presentation/pages/Home/Estudar';
 
 import Quiz from '../../../presentation/pages/Home/Quiz';
 
+import Adicao from '../../../presentation/pages/Home/Estudar/Reacoes/Adicao';
+
+import Decomposicao from '../../../presentation/pages/Home/Estudar/Reacoes/Decomposicao';
+
 import resp from '../../../utils/responsivity';
 
 import {
@@ -41,6 +45,8 @@ const StackHome: React.FC = () => {
     >
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Estudar" component={Estudar} />
+      <Stack.Screen name="Adicao" component={Adicao} />
+      <Stack.Screen name="Decomposicao" component={Decomposicao} />
       <Stack.Screen name="Quiz" component={Quiz} />
     </Stack.Navigator>
   )

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
-import { Global_Container, Global_Scroll } from '../../../../utils/global';
+import { Global_Container, Global_Scroll, Global_styles } from '../../../../utils/global';
 import Header from '../../../components/Header';
 import StatusBar from '../../../components/StatusBar';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
+import IconTudoEnsaio from '../../../../assets/icons/tubo_de_ensaio.png';
 
 import resp from '../../../../utils/responsivity';
 
@@ -18,10 +20,13 @@ import {
   Title_Text,
   Title_Topico,
   Button_Left_Text,
-  Icon_Container
+  Icon_Container,
+  Icon
 } from './styles';
+import { useNavigation } from '@react-navigation/core';
 
 const Estudar: React.FC = () => {
+  const { navigate } = useNavigation();
   return (
     <>
       {
@@ -62,13 +67,163 @@ const Estudar: React.FC = () => {
               Tipos de reações:
             </Title_Topico>
 
-            <Button_Container>
+            <Button_Container 
+              onPress={() => { navigate("Adicao") }}
+              style={Global_styles.shadow}
+            >
               <Button_Left_Container>
                 <Icon_Container>
-
+                  <Icon 
+                    source={IconTudoEnsaio}
+                    resizeMode="stretch"
+                  />
                 </Icon_Container>
                 <Button_Left_Text>
                   Reações em síntese ou adição
+                </Button_Left_Text>
+              </Button_Left_Container>
+              <Button_Right_Container>
+                <FontAwesome 
+                  name="angle-right"
+                  size={resp(50)}
+                  color="#FFFFFF"
+                />
+              </Button_Right_Container>
+            </Button_Container>
+
+            <Button_Container
+              onPress={() => { navigate("Decomposicao") }}
+              style={Global_styles.shadow}
+            >
+              <Button_Left_Container>
+                <Icon_Container>
+                  <Icon 
+                    source={IconTudoEnsaio}
+                    resizeMode="stretch"
+                  />
+                </Icon_Container>
+                <Button_Left_Text>
+                  Reações de Análise ou Decomposição
+                </Button_Left_Text>
+              </Button_Left_Container>
+              <Button_Right_Container>
+                <FontAwesome 
+                  name="angle-right"
+                  size={resp(50)}
+                  color="#FFFFFF"
+                />
+              </Button_Right_Container>
+            </Button_Container>
+
+            <Button_Container
+              onPress={() => { navigate("Adicao") }}
+              style={Global_styles.shadow}
+            >
+              <Button_Left_Container>
+                <Icon_Container>
+                  <Icon 
+                    source={IconTudoEnsaio}
+                    resizeMode="stretch"
+                  />
+                </Icon_Container>
+                <Button_Left_Text>
+                  Reações de Simples Troca ou Deslocamento
+                </Button_Left_Text>
+              </Button_Left_Container>
+              <Button_Right_Container>
+                <FontAwesome 
+                  name="angle-right"
+                  size={resp(50)}
+                  color="#FFFFFF"
+                />
+              </Button_Right_Container>
+            </Button_Container>
+
+            <Button_Container
+              onPress={() => { navigate("Adicao") }}
+              style={Global_styles.shadow}
+            >
+              <Button_Left_Container>
+                <Icon_Container>
+                  <Icon 
+                    source={IconTudoEnsaio}
+                    resizeMode="stretch"
+                  />
+                </Icon_Container>
+                <Button_Left_Text>
+                  Reações de Dupla Troca
+                </Button_Left_Text>
+              </Button_Left_Container>
+              <Button_Right_Container>
+                <FontAwesome 
+                  name="angle-right"
+                  size={resp(50)}
+                  color="#FFFFFF"
+                />
+              </Button_Right_Container>
+            </Button_Container>
+
+            <Button_Container
+              onPress={() => { navigate("Adicao") }}
+              style={Global_styles.shadow}
+            >
+              <Button_Left_Container>
+                <Icon_Container>
+                  <Icon 
+                    source={IconTudoEnsaio}
+                    resizeMode="stretch"
+                  />
+                </Icon_Container>
+                <Button_Left_Text>
+                  Reações de Substituição
+                </Button_Left_Text>
+              </Button_Left_Container>
+              <Button_Right_Container>
+                <FontAwesome 
+                  name="angle-right"
+                  size={resp(50)}
+                  color="#FFFFFF"
+                />
+              </Button_Right_Container>
+            </Button_Container>
+
+            <Button_Container
+              onPress={() => { navigate("Adicao") }}
+              style={Global_styles.shadow}
+            >
+              <Button_Left_Container>
+                <Icon_Container>
+                  <Icon 
+                    source={IconTudoEnsaio}
+                    resizeMode="stretch"
+                  />
+                </Icon_Container>
+                <Button_Left_Text>
+                  Reações de Eliminação
+                </Button_Left_Text>
+              </Button_Left_Container>
+              <Button_Right_Container>
+                <FontAwesome 
+                  name="angle-right"
+                  size={resp(50)}
+                  color="#FFFFFF"
+                />
+              </Button_Right_Container>
+            </Button_Container>
+
+            <Button_Container
+              onPress={() => { navigate("Adicao") }}
+              style={Global_styles.shadow}
+            >
+              <Button_Left_Container>
+                <Icon_Container>
+                  <Icon 
+                    source={IconTudoEnsaio}
+                    resizeMode="stretch"
+                  />
+                </Icon_Container>
+                <Button_Left_Text>
+                  Reações de Oxidação
                 </Button_Left_Text>
               </Button_Left_Container>
               <Button_Right_Container>
