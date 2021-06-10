@@ -13,14 +13,16 @@ export const Header_Container = styled.SafeAreaView`
 `;
 
 export const Icon_Container = styled.TouchableOpacity`
-  width: ${resp(80)}px;
+  width: ${resp(30)}px;
+  margin-left: ${resp(30)}px;
+  margin-right: ${resp(10)}px;
   height: ${resp(80)}px;
   align-items: center;
   justify-content: center;
 `;
 
 export const Title_Container = styled.View`
-  width: ${resp(300)}px;
+  width: ${resp(240)}px;
   height: ${resp(80)}px;
   justify-content: center;
   align-items: flex-start;

@@ -23,6 +23,12 @@ import Adicao from '../../../presentation/pages/Home/Estudar/Reacoes/Adicao';
 
 import Decomposicao from '../../../presentation/pages/Home/Estudar/Reacoes/Decomposicao';
 
+import Deslocamento from '../../../presentation/pages/Home/Estudar/Reacoes/Deslocamento';
+
+import TrocaDupla from '../../../presentation/pages/Home/Estudar/Reacoes/TrocaDupla';
+
+import Substituicao from '../../../presentation/pages/Home/Estudar/Reacoes/Substituicao';
+
 import resp from '../../../utils/responsivity';
 
 import {
@@ -47,6 +53,9 @@ const StackHome: React.FC = () => {
       <Stack.Screen name="Estudar" component={Estudar} />
       <Stack.Screen name="Adicao" component={Adicao} />
       <Stack.Screen name="Decomposicao" component={Decomposicao} />
+      <Stack.Screen name="Deslocamento" component={Deslocamento} />
+      <Stack.Screen name="TrocaDupla" component={TrocaDupla} />
+      <Stack.Screen name="Substituicao" component={Substituicao} />
       <Stack.Screen name="Quiz" component={Quiz} />
     </Stack.Navigator>
   )
