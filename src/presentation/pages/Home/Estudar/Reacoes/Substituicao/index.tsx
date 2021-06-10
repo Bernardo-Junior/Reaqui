@@ -28,7 +28,7 @@ const Substituicao: React.FC = () => {
         Platform.OS === "ios" && <StatusBar />
       }
       <Global_Scroll>
-        <HeaderReacoes title="Reações de Dupla Troca" />
+        <HeaderReacoes title="Reações de Substituição" />
         <Global_Container style={{backgroundColor: Global_Primary}}>
           <Adicao_Container>
           <Conteudo_Container

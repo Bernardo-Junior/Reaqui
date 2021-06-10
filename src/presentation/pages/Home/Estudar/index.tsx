@@ -188,7 +188,7 @@ const Estudar: React.FC = () => {
             </Button_Container>
 
             <Button_Container
-              onPress={() => { navigate("Adicao") }}
+              onPress={() => { navigate("Eliminacao") }}
               style={Global_styles.shadow}
             >
               <Button_Left_Container>
@@ -212,7 +212,7 @@ const Estudar: React.FC = () => {
             </Button_Container>
 
             <Button_Container
-              onPress={() => { navigate("Adicao") }}
+              onPress={() => { navigate("Oxidacao") }}
               style={Global_styles.shadow}
             >
               <Button_Left_Container>

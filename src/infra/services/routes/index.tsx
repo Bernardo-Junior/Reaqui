@@ -29,6 +29,10 @@ import TrocaDupla from '../../../presentation/pages/Home/Estudar/Reacoes/TrocaDu
 
 import Substituicao from '../../../presentation/pages/Home/Estudar/Reacoes/Substituicao';
 
+import Eliminacao from '../../../presentation/pages/Home/Estudar/Reacoes/Eliminação';
+
+import Oxidacao from '../../../presentation/pages/Home/Estudar/Reacoes/Oxidacao';
+
 import resp from '../../../utils/responsivity';
 
 import {
@@ -56,6 +60,8 @@ const StackHome: React.FC = () => {
       <Stack.Screen name="Deslocamento" component={Deslocamento} />
       <Stack.Screen name="TrocaDupla" component={TrocaDupla} />
       <Stack.Screen name="Substituicao" component={Substituicao} />
+      <Stack.Screen name="Eliminacao" component={Eliminacao} />
+      <Stack.Screen name="Oxidacao" component={Oxidacao} />
       <Stack.Screen name="Quiz" component={Quiz} />
     </Stack.Navigator>
   )
