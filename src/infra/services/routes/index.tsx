@@ -62,7 +62,7 @@ const StackHome: React.FC = () => {
       <Stack.Screen name="Substituicao" component={Substituicao} />
       <Stack.Screen name="Eliminacao" component={Eliminacao} />
       <Stack.Screen name="Oxidacao" component={Oxidacao} />
-      <Stack.Screen name="Quiz" component={Quiz} />
+      <Stack.Screen name="Quiz" component={Quiz} options={{gestureEnabled: false, }} />
     </Stack.Navigator>
   )
 }

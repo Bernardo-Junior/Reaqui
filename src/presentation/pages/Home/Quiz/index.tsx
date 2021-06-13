@@ -1,9 +1,11 @@
 import React from 'react';
-import { Platform, View } from 'react-native';
+import { Platform, View, Text, BackHandler, Alert } from 'react-native';
 import { Global_Scroll, Global_Container, Global_styles } from '../../../../utils/global';
 import StatusBar from '../../../components/StatusBar';
 
 import iconLivro from '../../../../assets/icons/livro.png';
+
+import { Data } from '../../../../utils/perguntasArray';
 
 import {
   Header_Container,
@@ -14,10 +16,102 @@ import {
   Questao_Body,
   Pergunta_Texto,
   Titulo_Questao,
-  Questao_Header_Container
+  Questao_Header_Container,
+  Radio_Button,
+  Questao_Body_Container,
+  Radio_Selected,
+  Radio_Container,
+  Radio_Label,
+  Footer_Container,
+  Footer_Container_Opcoes_Button_Next,
+  Footer_Container_Opcoes_Pontuacao_Text,
+  Footer_Container_Opcoes_Top,
+  Footer_Container_Opcoes_Button_Label,
+  Button_Sair
 } from './styles';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const Quiz: React.FC = () => {
+  const [quantidadeQuestoes, setQuantidadeQuestoes] = useState<number>(0);
+  const { goBack, } = useNavigation();
+  const [control, setControl] = useState<number>(0);
+  const [pontuacao, setPontuacao] = useState<number>(0);
+
+  // useEffect(() => {
+  //   const gestureEndListener = () => {
+  //     limparTudo();
+  //   };
+  
+  //   // You can also use the 'gestureStart' or 'gestureCancel' events
+  //   navigation.addListener('gestureEnd', gestureEndListener);
+  
+  //   return () => {
+  //     navigation.removeListener('gestureEnd', gestureEndListener);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    const backAction = () => {
+      
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
+  const limparOpcoes = () => {
+    Data[quantidadeQuestoes].opcoes.forEach(op => {
+      if(op.isSelecionado === true) {
+        op.isSelecionado = false;
+      }
+    })
+  }
+
+  const limparTudo = () => {
+    console.log(quantidadeQuestoes)
+    for(var i = 0; i <= quantidadeQuestoes; i++) {
+      Data[i].opcoes.forEach(op => {
+        if(op.isSelecionado === true) {
+          op.isSelecionado = false;
+          
+        }
+      })
+    }
+    setControl(control+1);
+    goBack();
+  }
+  const pintarRadio = (id: number, index: number) => {
+    const buscarIndex = Data[quantidadeQuestoes].opcoes.findIndex(op => op.id === id);
+   
+    if(buscarIndex >= 0) {
+      limparOpcoes();
+      Data[quantidadeQuestoes].opcoes[buscarIndex].isSelecionado = true;
+      setControl(control+1);
+    }
+  }
+
+  const verificarOpcao = () => {
+    const indexSelecionado = Data[quantidadeQuestoes].opcoes.findIndex(op => op.isSelecionado === true);
+    if(indexSelecionado >= 0) {
+      console.log(indexSelecionado, Data[quantidadeQuestoes].respota)
+      if(indexSelecionado === Data[quantidadeQuestoes].respota) {
+        setPontuacao(pontuacao+1);
+        setQuantidadeQuestoes(quantidadeQuestoes+1);
+      }
+    } else {
+      console.log("CAMPO VAZIO")
+    }
+  }
+  useEffect(() => {
+   
+  }, [control])
   return (
     <>
       {
@@ -37,21 +131,75 @@ const Quiz: React.FC = () => {
             </Header_Text>
           </Header_Container>
 
-          <Questao_Container style={Global_styles.shadow}>
+          <Questao_Container style={[Global_styles.shadow, { elevation: 2}]}>
             <Questao_Header >
               <Questao_Header_Container>
                 <Titulo_Questao>
-                  Questão 1
+                  {Data[quantidadeQuestoes].titulo}
                 </Titulo_Questao>
                 <Pergunta_Texto>
-                  Qual o resultado da reação A + B ?
+                  {Data[quantidadeQuestoes].pergunta}
                 </Pergunta_Texto>
               </Questao_Header_Container>
             </Questao_Header>
             <Questao_Body>
+              <Questao_Body_Container>
+                {
+                  Data[quantidadeQuestoes].opcoes.map((item, index) => {
+                    return (
+                      <Radio_Container key={item.id}>
+                        <Radio_Button onPress={() => { pintarRadio(item.id, index)} } >
+                          {
+                            item.isSelecionado && (
+                              <Radio_Selected />
+                            )
+                          }
+                        </Radio_Button>
+                        <Radio_Label>
+                          {item.texto}
+                        </Radio_Label>
+                      </Radio_Container>
 
+                    )
+                  })
+                }
+
+              </Questao_Body_Container>
             </Questao_Body>
           </Questao_Container>
+          <Footer_Container>
+            <Footer_Container_Opcoes_Top>
+              <Footer_Container_Opcoes_Pontuacao_Text>
+                Pontuação: <Text style={{fontWeight: 'bold', color: "#000000"}}>{pontuacao}</Text>
+              </Footer_Container_Opcoes_Pontuacao_Text>
+              <Footer_Container_Opcoes_Button_Next  
+                style={[Global_styles.shadow, { elevation: 2}]}
+                onPress={() => { verificarOpcao() }}
+              >
+                <Footer_Container_Opcoes_Button_Label>
+                  Próximo
+                </Footer_Container_Opcoes_Button_Label>
+              </Footer_Container_Opcoes_Button_Next>
+            </Footer_Container_Opcoes_Top>
+            <Button_Sair 
+              style={[Global_styles.shadow, { elevation: 2}]}
+              onPress={() => { 
+                Alert.alert("Sair!", "Você perderá todo o seu progresso se sair, deseja mesmo sair", [
+                  {
+                    text: "Não",
+                    onPress: () => null,
+                    style: "cancel"
+                  },
+                  { text: "Sim", onPress: () => { limparTudo()} }
+                ]);
+              }}
+            >
+              <Footer_Container_Opcoes_Button_Label>
+                Sair
+              </Footer_Container_Opcoes_Button_Label>
+            </Button_Sair>
+          </Footer_Container>
+          
         </Global_Container>
       </Global_Scroll>
     </>
