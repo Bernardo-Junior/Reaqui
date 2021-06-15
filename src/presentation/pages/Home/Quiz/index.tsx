@@ -96,17 +96,17 @@ const Quiz: React.FC = () => {
 
   const reset = () => {
     console.log(quantidadeQuestoes)
-    for(var i = 0; i <= quantidadeQuestoes; i++) {
+    for(var i = 0; i < quantidadeQuestoes; i++) {
       Data[i].opcoes.forEach(op => {
         if(op.isSelecionado === true) {
           op.isSelecionado = false;
           
         }
-      })
-      setPontuacao(0);
-      setQuestoesCorretas(0);
-      setQuantidadeQuestoes(0);
+      }) 
     }
+    setPontuacao(0);
+    setQuestoesCorretas(0);
+    setQuantidadeQuestoes(0);
   }
   const pintarRadio = (id: number, index: number) => {
     const buscarIndex = Data[quantidadeQuestoes].opcoes.findIndex(op => op.id === id);
