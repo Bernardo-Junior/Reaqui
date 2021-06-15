@@ -11,8 +11,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		BB5FCC9E37B7ABB0BDE8BC61 /* libPods-Reaqui-ReaquiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FF561897609AE2BC663E7A /* libPods-Reaqui-ReaquiTests.a */; };
+		D1371CB326796F3C000CF645 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1371CB226796F3C000CF645 /* Launch Screen.storyboard */; };
 		FB297277A7192478CDAF3713 /* libPods-Reaqui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FACC812247B35D9059566F97 /* libPods-Reaqui.a */; };
 /* End PBXBuildFile section */
 
@@ -38,10 +38,10 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Reaqui/main.m; sourceTree = "<group>"; };
 		3D95FB92928D503E75EE1F62 /* Pods-Reaqui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaqui.release.xcconfig"; path = "Target Support Files/Pods-Reaqui/Pods-Reaqui.release.xcconfig"; sourceTree = "<group>"; };
 		629788021205B4F6774E3CD5 /* Pods-Reaqui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaqui.debug.xcconfig"; path = "Target Support Files/Pods-Reaqui/Pods-Reaqui.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Reaqui/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8488B94A4690BA8364A7AEB4 /* Pods-Reaqui-ReaquiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaqui-ReaquiTests.release.xcconfig"; path = "Target Support Files/Pods-Reaqui-ReaquiTests/Pods-Reaqui-ReaquiTests.release.xcconfig"; sourceTree = "<group>"; };
 		94FF561897609AE2BC663E7A /* libPods-Reaqui-ReaquiTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaqui-ReaquiTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC28248D78C92CCD8E931EDF /* Pods-Reaqui-ReaquiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reaqui-ReaquiTests.debug.xcconfig"; path = "Target Support Files/Pods-Reaqui-ReaquiTests/Pods-Reaqui-ReaquiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1371CB226796F3C000CF645 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FACC812247B35D9059566F97 /* libPods-Reaqui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reaqui.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,8 +89,8 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				D1371CB226796F3C000CF645 /* Launch Screen.storyboard */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = Reaqui;
@@ -250,7 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				D1371CB326796F3C000CF645 /* Launch Screen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

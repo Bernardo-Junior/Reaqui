@@ -14,6 +14,8 @@ Ionicons.loadFont();
 
 import resp from '../../../utils/responsivity';
 
+import SplashScreen from 'react-native-splash-screen';
+
 import { 
   Home_Container, 
   Icone_Reaqui, 
@@ -29,8 +31,12 @@ import {
   Menu_Texto2
 } from './styles';
 import { useNavigation } from '@react-navigation/core';
+import { useEffect } from 'react';
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, [])
   const { navigate } = useNavigation();
   return (
     <> 
