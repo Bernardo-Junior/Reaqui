@@ -79,7 +79,7 @@ const Estudar: React.FC = () => {
                   />
                 </Icon_Container>
                 <Button_Left_Text>
-                  Reações em síntese ou adição
+                  Reações em Síntese ou Adição
                 </Button_Left_Text>
               </Button_Left_Container>
               <Button_Right_Container>

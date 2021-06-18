@@ -5,7 +5,7 @@ import resp from '../../../utils/responsivity';
 
 export const Header_Container = styled.SafeAreaView`
   width: 100%;
-  height: ${resp(120)}px;
+  height: ${resp(140)}px;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
@@ -22,8 +22,8 @@ export const Icon_Container = styled.TouchableOpacity`
 `;
 
 export const Title_Container = styled.View`
-  width: ${resp(240)}px;
-  height: ${resp(80)}px;
+  width: ${resp(220)}px;
+  height: auto;
   justify-content: center;
   align-items: flex-start;
 `;
