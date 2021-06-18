@@ -27,7 +27,7 @@ const Adicao: React.FC = () => {
         Platform.OS === 'ios' && <StatusBar />
       }
       <Global_Scroll>
-        <HeaderReacoes title="Reações de síntese ou adição" />
+        <HeaderReacoes title="Reações de Síntese ou Adição" />
         <Global_Container style={{backgroundColor: Global_Primary}}>
           <Adicao_Container>
             <Conteudo_Container 

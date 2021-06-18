@@ -67,7 +67,7 @@ const Home: React.FC = () => {
             >
               <Menu_Img1 source={proveta}  resizeMode="contain" />
               <Menu_Titulo1>
-                Estudar reações
+                Estudar Reações
               </Menu_Titulo1>
               <Menu_Texto1 style={{width: "100%"}}>
                 Conheça os diversos tipos de reações 

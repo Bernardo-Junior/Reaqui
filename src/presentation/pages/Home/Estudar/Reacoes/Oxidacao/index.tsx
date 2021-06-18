@@ -30,7 +30,7 @@ const Oxidacao: React.FC = () => {
     <>
       {Platform.OS === 'ios' && <StatusBar />}
       <Global_Scroll>
-        <HeaderReacoes title="Reações de Exidação" />
+        <HeaderReacoes title="Reações de Oxidação" />
         <Global_Container style={{backgroundColor: Global_Primary}}>
           <Adicao_Container>
             <Conteudo_Container

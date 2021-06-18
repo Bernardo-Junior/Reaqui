@@ -31,7 +31,7 @@ export const Decomposicao: React.FC = () => {
         Platform.OS === 'ios' && <StatusBar />
       }
       <Global_Scroll>
-        <HeaderReacoes title="Reações de análise ou decomposição" />
+        <HeaderReacoes title="Reações de Análise ou Decomposição" />
         <Global_Container style={{backgroundColor: Global_Primary}}>
           <Adicao_Container>
             <Conteudo_Container
