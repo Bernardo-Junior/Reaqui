@@ -48,6 +48,7 @@ export const Button_Politica = styled.TouchableOpacity`
   align-self: center;
   border-radius: ${resp(100)}px;
   flex-direction: row;
+  margin-bottom: ${resp(20)}px;
 `;
 
 export const Button_Text = styled.Text`

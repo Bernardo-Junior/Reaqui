@@ -4,8 +4,8 @@ import { Global_Container, Global_Scroll, Global_Secundary, Global_styles, Globa
 import Header from '../../components/Header';
 import StatusBar from '../../components/StatusBar';
 
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-MaterialCommunityIcons.loadFont();
+import Ionicons from 'react-native-vector-icons/Ionicons';
+Ionicons.loadFont();
 
 import resp from '../../../utils/responsivity';
 
@@ -19,8 +19,10 @@ import {
   Button_Politica,
   Button_Text
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 const Sobre: React.FC = () => {
+  const { navigate } = useNavigation();
   return (
     <>
       {
@@ -42,15 +44,18 @@ const Sobre: React.FC = () => {
             e Tecnologia (ICET/UFAM), sob a orientação do Professor Dr. Rainer Xavier de Amorim.
           </Text_Sobre>
 
-          <Button_Politica style={Global_styles.shadow}>
-            <MaterialCommunityIcons 
-              name="shield-alert"
+          <Button_Politica 
+            style={Global_styles.shadow}
+            onPress={() => { navigate('TermosDeUso') }}
+          >
+            <Ionicons 
+              name="document-text-outline"
               size={resp(35)}
               color={"#FFFFFF"}
               style={Global_styles.shadow}
             />
             <Button_Text>
-              Politica e Privacidade
+              Termos de Uso
             </Button_Text>
           </Button_Politica>
 

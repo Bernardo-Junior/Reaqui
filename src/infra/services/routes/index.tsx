@@ -13,7 +13,7 @@ import Home from '../../../presentation/pages/Home';
 
 import Sobre from '../../../presentation/pages/Sobre';
 
-import Politica from '../../../presentation/pages/PoliticaEPrivacidade';
+import Politica from '../../../presentation/pages/TermosDeUso';
 
 import Estudar from '../../../presentation/pages/Home/Estudar';
 
@@ -32,6 +32,8 @@ import Substituicao from '../../../presentation/pages/Home/Estudar/Reacoes/Subst
 import Eliminacao from '../../../presentation/pages/Home/Estudar/Reacoes/Eliminação';
 
 import Oxidacao from '../../../presentation/pages/Home/Estudar/Reacoes/Oxidacao';
+
+import TermosDeUso from '../../../presentation/pages/TermosDeUso';
 
 import resp from '../../../utils/responsivity';
 
@@ -63,6 +65,22 @@ const StackHome: React.FC = () => {
       <Stack.Screen name="Eliminacao" component={Eliminacao} />
       <Stack.Screen name="Oxidacao" component={Oxidacao} />
       <Stack.Screen name="Quiz" component={Quiz} options={{gestureEnabled: false, }} />
+    </Stack.Navigator>
+  )
+}
+
+const StackSobre: React.FC = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={() => ({
+        headerShown: false,
+        gestureDirection: 'horizontal',
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+      })}
+      initialRouteName="Sobre"
+    >
+      <Stack.Screen name="Sobre" component={Sobre} />
+      <Stack.Screen name="TermosDeUso" component={TermosDeUso} />
     </Stack.Navigator>
   )
 }
@@ -163,7 +181,7 @@ const BottomNavigator: React.FC = () => {
       initialRouteName="Home"
     >
       <Tab.Screen name="Home" component={StackHome} />
-      <Tab.Screen name="Sobre" component={Sobre} />
+      <Tab.Screen name="Sobre" component={StackSobre} />
       {/* <Tab.Screen name="Politica" component={Politica} /> */}
     </Tab.Navigator>
   )

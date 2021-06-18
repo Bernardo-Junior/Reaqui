@@ -278,14 +278,7 @@ const Quiz: React.FC = () => {
           <Button_Sair 
             style={[Global_styles.shadow, { elevation: 2}]}
             onPress={() => { 
-              Alert.alert("Sair!", "Você perderá todo o seu progresso se sair, deseja mesmo sair", [
-                {
-                  text: "Não",
-                  onPress: () => null,
-                  style: "cancel"
-                },
-                { text: "Sim", onPress: () => { limparTudo()} }
-              ]);
+              goBack()
             }}
           >
             <Footer_Container_Opcoes_Button_Label>
