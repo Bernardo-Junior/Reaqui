@@ -79,17 +79,18 @@ const Quiz: React.FC = () => {
 
   const limparTudo = () => {
     console.log(quantidadeQuestoes)
-    for(var i = 0; i <= quantidadeQuestoes; i++) {
+    for(var i = 0; i < quantidadeQuestoes; i++) {
       Data[i].opcoes.forEach(op => {
         if(op.isSelecionado === true) {
           op.isSelecionado = false;
           
         }
       })
-      setPontuacao(0);
-      setQuestoesCorretas(0);
-      setQuantidadeQuestoes(0);
+      
     }
+    setPontuacao(0);
+    setQuestoesCorretas(0);
+    setQuantidadeQuestoes(0);
     setControl(control+1);
     goBack();
   }
@@ -278,7 +279,7 @@ const Quiz: React.FC = () => {
           <Button_Sair 
             style={[Global_styles.shadow, { elevation: 2}]}
             onPress={() => { 
-              goBack()
+              limparTudo()
             }}
           >
             <Footer_Container_Opcoes_Button_Label>
