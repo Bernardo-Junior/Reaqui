@@ -56,6 +56,10 @@ const Quiz: React.FC = () => {
   // }, [])
 
   useEffect(() => {
+    resetInicial()
+  }, [])
+
+  useEffect(() => {
     const backAction = () => {
       
       return true;
@@ -79,9 +83,10 @@ const Quiz: React.FC = () => {
 
   const limparTudo = () => {
     console.log(quantidadeQuestoes)
-    for(var i = 0; i < quantidadeQuestoes; i++) {
+    for(var i = 0; i < 10; i++) {
       Data[i].opcoes.forEach(op => {
         if(op.isSelecionado === true) {
+          console.log(op.isSelecionado)
           op.isSelecionado = false;
           
         }
@@ -93,6 +98,24 @@ const Quiz: React.FC = () => {
     setQuantidadeQuestoes(0);
     setControl(control+1);
     goBack();
+  }
+
+  const resetInicial = () => {
+    console.log(quantidadeQuestoes)
+    for(var i = 0; i < 10; i++) {
+      Data[i].opcoes.forEach(op => {
+        if(op.isSelecionado === true) {
+          console.log(op.isSelecionado)
+          op.isSelecionado = false;
+          
+        }
+      })
+      
+    }
+    setPontuacao(0);
+    setQuestoesCorretas(0);
+    setQuantidadeQuestoes(0);
+    setControl(control+1);
   }
 
   const reset = () => {
